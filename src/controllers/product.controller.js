@@ -62,9 +62,9 @@ getDeleteProductView(req, res) {
 
 //Search Product
 searchProduct(req,res){
-    const {search} = req.body;
-    console.log(search)
-    const product = ProductModel.searchByName(search);
+    const {name} = req.body;
+    console.log(name)
+    const product = ProductModel.searchByName(name);
     res.render("searchResults", {products:product})   
 }
 }
