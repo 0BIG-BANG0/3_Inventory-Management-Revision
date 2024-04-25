@@ -7,7 +7,7 @@ import path from "path";
 // Creating an instance of the Express application
 const app = express();
 
-//for js file
+//for static file like css
 app.use(express.static("public"));
 app.use(express.static("views"));
 
