@@ -22,7 +22,7 @@ export default class ProductController{
         // console.log(req.body);
         ProductModel.add(req.body);
         let products = ProductModel.get()
-        return res.render("products",{products:products})
+        return res.redirect("/",{products:products})
     }
     getUpdateProductView(req,res,next){
         //1. If Product Exist then return view
