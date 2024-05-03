@@ -37,11 +37,11 @@ export default class ProductController {
       res.status(401).send("Product not found");
     }
   }
-  async postUpdateProduct(req, res) {
-    await ProductModel.update(req.body);
+  postUpdateProduct(req, res) {
+    ProductModel.update(req.body);
     const products = ProductModel.get();
     console.log(products);
-    res.render("products", { products: products });
+    res.redirect("/");
   }
 
   // This function is intended to delete a product from the database and render the updated list of products.
@@ -49,7 +49,7 @@ export default class ProductController {
     // Extract the product id from the request parameters
     const id = req.params.id;
     // Log the id for debugging purposes
-    // console.log(id);
+    console.log(id);
 
     // Call the static method 'deleteById' of the ProductModel class to delete the product
     ProductModel.deleteById(id);
